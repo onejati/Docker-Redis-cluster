@@ -1,0 +1,12 @@
+Master-2:
+  scale: 1
+Master-1:
+  scale: 1
+Master-3:
+  scale: 1
+Slave-2:
+  scale: 1
+Slave-3:
+  scale: 1
+Slave-1:
+  scale: 1
