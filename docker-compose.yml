@@ -1,0 +1,60 @@
+Master-2:
+  ports:
+  - 6379:6379/tcp
+  environment:
+    REDIS_NODE_PORT: '6379'
+  labels:
+    io.rancher.scheduler.affinity:host_label: Name=pilot-aca-mongodb-2
+  image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/aertrak/redis:3.0
+  net: host
+  mem_limit: 8589934592
+Master-1:
+  ports:
+  - 6379:6379/tcp
+  environment:
+    REDIS_NODE_PORT: '6379'
+  labels:
+    io.rancher.scheduler.affinity:host_label: Name=pilot-aca-mongodb-1
+  image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/aertrak/redis:3.0
+  net: host
+  mem_limit: 8589934592
+Master-3:
+  ports:
+  - 6379:6379/tcp
+  environment:
+    REDIS_NODE_PORT: '6379'
+  labels:
+    io.rancher.scheduler.affinity:host_label: Name=pilot-aca-mongodb-3
+  image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/aertrak/redis:3.0
+  net: host
+  mem_limit: 8589934592
+Slave-2:
+  ports:
+  - 6380:6380/tcp
+  environment:
+    REDIS_NODE_PORT: '6380'
+  labels:
+    io.rancher.scheduler.affinity:host_label: Name=pilot-aca-mongodb-3
+  image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/aertrak/redis:3.0
+  net: host
+  mem_limit: 8589934592
+Slave-3:
+  ports:
+  - 6380:6380/tcp
+  environment:
+    REDIS_NODE_PORT: '6380'
+  labels:
+    io.rancher.scheduler.affinity:host_label: Name=pilot-aca-mongodb-1
+  image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/aertrak/redis:3.0
+  net: host
+  mem_limit: 8589934592
+Slave-1:
+  ports:
+  - 6380:6380/tcp
+  environment:
+    REDIS_NODE_PORT: '6380'
+  labels:
+    io.rancher.scheduler.affinity:host_label: Name=pilot-aca-mongodb-2
+  image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/aertrak/redis:3.0
+  net: host
+  mem_limit: 8589934592
