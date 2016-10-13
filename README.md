@@ -6,9 +6,10 @@ Note: Redis cluster is olny working with Host network
 Make the cluster up and running:
 root:/redis# ./src/redis-trib.rb create --replicas 1 master-1:6379 mater-2:6379 master-3:6379 slave-1:6380 slave-2:6380 slave-3:6380
 
-# Creating cluster
 
->>> Performing hash slots allocation on 6 nodes...
+Creating cluster
+
+Performing hash slots allocation on 6 nodes...
 Using 3 masters:
 master-1:6379
 master-2:6379
@@ -29,11 +30,11 @@ S: fd3391185e37774cbf5f85de803aead4e074768f slave-2:6380
 S: 24896b9eaf69682e1562c3cb8d53cb4e35618b61 slave-3:6380
    replicates 7fd328360bf68cbd413c6e54d99518d8f5593306
 Can I set the above configuration? (type 'yes' to accept): yes
->>> Nodes configuration updated
->>> Assign a different config epoch to each node
->>> Sending CLUSTER MEET messages to join the cluster
+Nodes configuration updated
+Assign a different config epoch to each node
+Sending CLUSTER MEET messages to join the cluster
 Waiting for the cluster to join...
->>> Performing Cluster Check (using node master-1:6379)
+Performing Cluster Check (using node master-1:6379)
 M: d885fabce58332b854ad25f1d6bf22f06dbe678d master-1:6379
    slots:0-5460 (5461 slots) master
 M: 1120a08e68d0b3bece74de0a1a5b363369e81144 master-2:6379
@@ -49,7 +50,6 @@ M: fd3391185e37774cbf5f85de803aead4e074768f slave-2:6380
 M: 24896b9eaf69682e1562c3cb8d53cb4e35618b61 slave-3:6380
    slots: (0 slots) master
    replicates 7fd328360bf68cbd413c6e54d99518d8f5593306
-[OK] All nodes agree about slots configuration.
->>> Check for open slots...
->>> Check slots coverage...
+[OK] All nodes agree about slots configurationCheck for open slots...
+Check slots coverage...
 Cluster connected.
